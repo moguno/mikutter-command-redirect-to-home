@@ -1,0 +1,12 @@
+---
+slug: :mikutter-command-redirect-to-home
+depends:
+  mikutter: 3.2.1
+  plugin:
+  - settings
+  - gui
+  - command
+version: 0.0.1
+author: moguno
+name: mikutter-command-redirect-to-home
+description: メッセージをホームタイムラインに転送します。
