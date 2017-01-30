@@ -41,8 +41,10 @@ Plugin.create(:mikutter_command_redirect_to_home) {
       if message
         Delayer.new {
           Plugin::GUI::Timeline.cuscaded[:home_timeline] << message
-          message[:modified] = Time.now
-          Plugin::call(:message_modified, message)
+          if message[:modified] <= Time.now
+            message[:modified] = Time.now
+            Plugin::call(:message_modified, message)
+          end
         }
       end
     }
